@@ -1,9 +1,11 @@
-
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -44,6 +46,7 @@ const Index = () => {
                 <Button 
                   variant="secondary"
                   className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  onClick={() => navigate(`/destination/${destination.name.toLowerCase().replace(/\s+/g, '-')}`)}
                 >
                   Explore More
                 </Button>
